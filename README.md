@@ -1,12 +1,47 @@
-# OR Gate using Verilog HDL
+# Logic Gates using Verilog HDL
 
 ## Project Overview
 
-This project implements a **2-input OR Gate** using **Verilog HDL**.
+This repository contains basic digital logic gate implementations using **Verilog HDL**.
 
-An OR gate is a basic digital logic gate that produces a logic HIGH (`1`) at the output if **at least one of the inputs is HIGH (`1`)**. The output is LOW (`0`) only when both inputs are LOW (`0`).
+The projects include Verilog design modules, testbenches, RTL designs, and simulation waveforms for verifying the functionality of the logic gates.
 
-## Truth Table
+## Logic Gates Implemented
+
+* AND Gate
+* OR Gate
+
+More logic gates will be added as the project progresses.
+
+---
+
+## 1. AND Gate
+
+The AND gate is a basic digital logic gate. Its output is HIGH (`1`) only when both inputs are HIGH (`1`).
+
+### Truth Table
+
+| A | B | Y |
+| - | - | - |
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+### Files
+
+* `and_gate.v` – Verilog design code
+* `and_gate_tb.v` – Verilog testbench
+* `and_design.png` – RTL design screenshot
+* `and_waveform.png` – Simulation waveform
+
+---
+
+## 2. OR Gate
+
+The OR gate is a basic digital logic gate. Its output is HIGH (`1`) when at least one of the inputs is HIGH (`1`).
+
+### Truth Table
 
 | A | B | Y |
 | - | - | - |
@@ -15,18 +50,14 @@ An OR gate is a basic digital logic gate that produces a logic HIGH (`1`) at the
 | 1 | 0 | 1 |
 | 1 | 1 | 1 |
 
-## Inputs and Output
-
-* **A** – First input
-* **B** – Second input
-* **Y** – Output
-
-## Files
+### Files
 
 * `or_gate.v` – Verilog design code
 * `or_gate_tb.v` – Verilog testbench
-* `or_gate_design.png` – RTL design screenshot
-* `or_gate_waveform.png` – Simulation waveform
+* `or_design.png` – RTL design screenshot
+* `or_waveform.png` – Simulation waveform
+
+---
 
 ## Tools Used
 
@@ -34,25 +65,31 @@ An OR gate is a basic digital logic gate that produces a logic HIGH (`1`) at the
 * Quartus Prime
 * ModelSim
 
-## Simulation
+## Verification
 
-The OR gate was verified using a Verilog testbench in **ModelSim**. Different input combinations were applied to verify the correct output for all possible input conditions.
+Both logic gates were verified using Verilog testbenches in **ModelSim**.
 
-## RTL Design
+All possible combinations of the two input signals were tested, and the simulation results were compared with the expected truth tables.
 
-*(Paste your RTL design screenshot here.)*
+## Learning Outcomes
 
-## Simulation Waveform
+Through these projects, I practiced:
 
-*(Paste your ModelSim waveform screenshot here.)*
-
-## Learning Outcome
-
-Through this project, I learned:
-
-* Verilog HDL coding
+* Verilog HDL
 * Behavioral modeling
 * Writing Verilog testbenches
-* Digital logic gate implementation
-* Simulation using ModelSim
-* RTL design generation using Quartus Prime
+* Basic digital logic design
+* RTL design
+* Simulation and waveform analysis
+* Using Quartus Prime
+* Using ModelSim
+
+## Future Additions
+
+The following gates will be added in future:
+
+* NOT Gate
+* NAND Gate
+* NOR Gate
+* XOR Gate
+* XNOR Gate
