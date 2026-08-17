@@ -2,22 +2,31 @@
 
 ## Project Overview
 
-This repository contains basic digital logic gate implementations using **Verilog HDL**.
+This repository contains implementations of the fundamental digital logic gates using **Verilog HDL**.
 
-The projects include Verilog design modules, testbenches, RTL designs, and simulation waveforms for verifying the functionality of the logic gates.
+Each logic gate was designed using Verilog behavioral modeling and verified using a dedicated testbench. The designs were simulated using **ModelSim**, and RTL designs were generated using **Quartus Prime**.
 
 ## Logic Gates Implemented
 
-* AND Gate
-* OR Gate
+The following logic gates are included in this repository:
 
-More logic gates will be added as the project progresses.
+1. AND Gate
+2. OR Gate
+3. NAND Gate
+4. NOR Gate
+5. NOT Gate
+6. XOR Gate
+7. XNOR Gate
 
 ---
 
 ## 1. AND Gate
 
-The AND gate is a basic digital logic gate. Its output is HIGH (`1`) only when both inputs are HIGH (`1`).
+The AND gate produces a HIGH (`1`) output only when both inputs are HIGH (`1`).
+
+### Boolean Expression
+
+`Y = A · B`
 
 ### Truth Table
 
@@ -30,16 +39,20 @@ The AND gate is a basic digital logic gate. Its output is HIGH (`1`) only when b
 
 ### Files
 
-* `and_gate.v` – Verilog design code
-* `and_gate_tb.v` – Verilog testbench
-* `and_design.png` – RTL design screenshot
-* `and_waveform.png` – Simulation waveform
+* `and_gate.v` – Design code
+* `and_gate_tb.v` – Testbench
+* `and_gate_design.png` - RTL/design screenshot
+* `and_gate_waveform.png` - simulation waveform
 
 ---
 
 ## 2. OR Gate
 
-The OR gate is a basic digital logic gate. Its output is HIGH (`1`) when at least one of the inputs is HIGH (`1`).
+The OR gate produces a HIGH (`1`) output when at least one input is HIGH (`1`).
+
+### Boolean Expression
+
+`Y = A + B`
 
 ### Truth Table
 
@@ -52,44 +65,168 @@ The OR gate is a basic digital logic gate. Its output is HIGH (`1`) when at leas
 
 ### Files
 
-* `or_gate.v` – Verilog design code
-* `or_gate_tb.v` – Verilog testbench
-* `or_design.png` – RTL design screenshot
-* `or_waveform.png` – Simulation waveform
+* `or_gate.v` – Design code
+* `or_gate_tb.v` – Testbench
+* `or_gate_design.png` -  RTL/design screenshot
+* `or_gate_waveform.png` - simulation waveform
 
 ---
 
-## Tools Used
+## 3. NAND Gate
 
-* Verilog HDL
-* Quartus Prime
-* ModelSim
+The NAND gate is the complement of the AND gate. It produces a LOW (`0`) output only when both inputs are HIGH (`1`).
 
-## Verification
+### Boolean Expression
 
-Both logic gates were verified using Verilog testbenches in **ModelSim**.
+`Y = ~(A · B)`
 
-All possible combinations of the two input signals were tested, and the simulation results were compared with the expected truth tables.
+### Truth Table
 
-## Learning Outcomes
+| A | B | Y |
+| - | - | - |
+| 0 | 0 | 1 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
 
-Through these projects, I practiced:
+### Files
+
+* `nand_gate.v` – Design code
+* `nand_gate_tb.v` – Testbench
+* `nand_gate_design.png` - RTL/design screenshot
+* `nand_gate_waveform.png` - simulation waveform
+
+---
+
+## 4. NOR Gate
+
+The NOR gate is the complement of the OR gate. It produces a HIGH (`1`) output only when both inputs are LOW (`0`).
+
+### Boolean Expression
+
+`Y = ~(A + B)`
+
+### Truth Table
+
+| A | B | Y |
+| - | - | - |
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 0 |
+
+### Files
+
+* `nor_gate.v` – Design code
+* `nor_gate_tb.v` – Testbench
+* `nor_gate_design.png` - RTL/design screenshot
+* `nor_gate_waveform.png` - simulation waveform
+
+---
+
+## 5. NOT Gate
+
+The NOT gate has a single input and produces the opposite logic value at its output.
+
+### Boolean Expression
+
+`Y = ~A`
+
+### Truth Table
+
+| A | Y |
+| - | - |
+| 0 | 1 |
+| 1 | 0 |
+
+### Files
+
+* `not_gate.v` – Design code
+* `not_gate_tb.v` – Testbench
+* `not_gate_design.png` - RTL/design screenshot
+* `not_gate_waveform.png` - simulation waveform
+
+---
+
+## 6. XOR Gate
+
+The XOR gate produces a HIGH (`1`) output when the two inputs are different.
+
+### Boolean Expression
+
+`Y = A ⊕ B`
+
+### Truth Table
+
+| A | B | Y |
+| - | - | - |
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+### Files
+
+* `xor_gate.v` – Design code
+* `xor_gate_tb.v` – Testbench
+* `xor_gate_design.png` - RTL/design screenshot
+* `xor_gate_waveform.png` - simulation waveform
+
+---
+
+## 7. XNOR Gate
+
+The XNOR gate is the complement of the XOR gate. It produces a HIGH (`1`) output when the two inputs are the same.
+
+### Boolean Expression
+
+`Y = ~(A ⊕ B)`
+
+### Truth Table
+
+| A | B | Y |
+| - | - | - |
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+### Files
+
+* `xnor_gate.v` – Design code
+* `xnor_gate_tb.v` – Testbench
+* `xnor_gate_design.png` - RTL/design screenshot
+* `xnor_gate_waveform.png` - simulation waveform
+
+---
+
+# Tools Used
+
+* **Verilog HDL** – Hardware description language used to design the logic gates
+* **Quartus Prime** – Used for RTL design and compilation
+* **ModelSim** – Used for simulation and waveform verification
+
+# Verification
+
+Each logic gate was tested using a separate Verilog testbench.
+
+All possible input combinations were applied during simulation, and the obtained outputs were verified against the corresponding truth tables.
+
+# Learning Outcomes
+
+Through this project, I practiced:
 
 * Verilog HDL
 * Behavioral modeling
+* `always @(*)` blocks
+* `if-else` statements
 * Writing Verilog testbenches
 * Basic digital logic design
 * RTL design
-* Simulation and waveform analysis
-* Using Quartus Prime
-* Using ModelSim
+* Simulation using ModelSim
+* Waveform analysis
+* Using Quartus Prime for Verilog projects
 
-## Future Additions
+# Project Structure
 
-The following gates will be added in future:
-
-* NOT Gate
-* NAND Gate
-* NOR Gate
-* XOR Gate
-* XNOR Gate
+The repository contains the Verilog design files, testbenches, RTL/design screenshots, and simulation waveforms for each logic gate.
